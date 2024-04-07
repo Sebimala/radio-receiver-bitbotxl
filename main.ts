@@ -15,9 +15,9 @@ radio.onReceivedValue(function (name, value) {
     }
     if (name == "dir") {
         if (value > 15) {
-            bitbot.rotate(BBRobotDirection.Left, value)
+            bitbot.rotate(BBRobotDirection.Right, value)
         } else if (value < -15) {
-            bitbot.rotate(BBRobotDirection.Right, Math.abs(value))
+            bitbot.rotate(BBRobotDirection.Left, Math.abs(value))
         } else {
         	
         }
@@ -29,5 +29,5 @@ let ledX = 0
 let ledY = 0
 radio.setGroup(69)
 bitbot.select_model(BBModel.XL)
-ledY = 2
-ledX = 2
+ledY = 3
+ledX = 3
