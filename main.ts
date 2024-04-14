@@ -2,19 +2,6 @@ function updatescreen () {
     basic.clearScreen()
     led.plot(ledX, ledY)
 }
-input.onButtonPressed(Button.A, function () {
-    if (BitBot == 1) {
-        BitBot = 2
-    } else {
-        BitBot = 1
-    }
-    basic.showString("" + (BitBot))
-    if (BitBot == 1) {
-        bitbot.BBBias(BBRobotDirection.Right, 10)
-    } else {
-        bitbot.BBBias(BBRobotDirection.Left, 18)
-    }
-})
 radio.onReceivedValue(function (name, value) {
     if (name == "acc") {
         if (value > 10) {
@@ -40,14 +27,8 @@ radio.onReceivedValue(function (name, value) {
 })
 let ledX = 0
 let ledY = 0
-let BitBot = 0
 radio.setGroup(69)
 bitbot.select_model(BBModel.XL)
-if (BitBot == 1) {
-    bitbot.BBBias(BBRobotDirection.Right, 10)
-} else {
-    bitbot.BBBias(BBRobotDirection.Left, 18)
-}
 ledY = 2
 ledX = 2
 updatescreen()
