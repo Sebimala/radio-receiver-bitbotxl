@@ -11,7 +11,7 @@ radio.onReceivedValue(function (name, value) {
         } else {
             bitbot.stop(BBStopMode.Brake)
         }
-        ledY = Math.round((value + 102) / 40)
+        ledY = Math.round((value + 102) / 50)
     }
     if (name == "dir") {
         if (value > 15) {
@@ -21,7 +21,7 @@ radio.onReceivedValue(function (name, value) {
         } else {
         	
         }
-        ledX = Math.round((value + 102) / 40)
+        ledX = Math.round((value + 102) / 50)
     }
     updatescreen()
 })
@@ -29,5 +29,6 @@ let ledX = 0
 let ledY = 0
 radio.setGroup(69)
 bitbot.select_model(BBModel.XL)
-ledY = 3
-ledX = 3
+ledY = 2
+ledX = 2
+updatescreen()
