@@ -29,7 +29,7 @@ radio.onReceivedValue(function (name, value) {
 })
 let ledX = 0
 let ledY = 0
-radio.setGroup(69)
+radio.setGroup(8)
 bitbot.select_model(BBModel.XL)
 ledY = 2
 ledX = 2
