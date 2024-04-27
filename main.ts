@@ -4,21 +4,19 @@ function updatescreen () {
 }
 radio.onReceivedValue(function (name, value) {
     if (name == "acc") {
-        if (value > 10) {
+        if (value > 15) {
             bitbot.go(BBDirection.Reverse, value)
-            bitbot.ledRotate()
-        } else if (value < -10) {
+        } else if (value < -15) {
             bitbot.go(BBDirection.Forward, Math.abs(value))
-            bitbot.ledRotate()
         } else {
             bitbot.stop(BBStopMode.Brake)
         }
         ledY = Math.round((value + 102) / 50)
     }
     if (name == "dir") {
-        if (value > 15) {
+        if (value > 20) {
             bitbot.rotate(BBRobotDirection.Right, value)
-        } else if (value < -15) {
+        } else if (value < -20) {
             bitbot.rotate(BBRobotDirection.Left, Math.abs(value))
         } else {
         	
@@ -34,4 +32,3 @@ bitbot.select_model(BBModel.XL)
 ledY = 2
 ledX = 2
 updatescreen()
-bitbot.ledRainbow()
