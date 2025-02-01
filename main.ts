@@ -27,7 +27,9 @@ radio.onReceivedValue(function (name, value) {
 })
 let ledX = 0
 let ledY = 0
-radio.setGroup(8)
+bitbot.setLedColor(0x00FFC0)
+radio.setGroup(3)
+bitbot.BBBias(BBRobotDirection.Right, 18)
 bitbot.select_model(BBModel.XL)
 ledY = 2
 ledX = 2
